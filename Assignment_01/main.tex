@@ -1,0 +1,232 @@
+\documentclass[12pt]{article}
+\usepackage{amsfonts}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage{comment}
+
+%\usepackage{pgfplots}
+%\pgfplotsset{width=10cm, compat=1.9}
+%\documentclass[border=2mm,tikz]{standalone}
+%\usetikzlibrary{datavisualization}
+
+
+\usepackage{fancyhdr}
+\usepackage{comment}
+\usepackage[a4paper, top=2.2cm, bottom=2.5cm, left=2.2cm, right=2.2cm]%
+{geometry}
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{changepage}
+\usepackage{amssymb}
+\usepackage{graphicx}%
+\setcounter{MaxMatrixCols}{30}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+
+\title{MAT120: Integral Calculus and
+Differential Equations \\
+BRAC University \\\\
+\textbf{Assignment 1}}
+
+\author{Name - Ishraq Ahmed Esha \\ ID - 19301261 \\ Section - 06 \\ Semester- Fall 2020 \\ \textbf{Set- 12}}
+\date{\today}
+\maketitle
+
+%%%%%%%%%%%Starting Point%%%%%%%%%%%%%%%
+
+%%%%%MATH 01%%%%%%%%%%%%
+\section{Evaluate the following integral by interpreting it as area, or otherwise:}
+
+
+\begin{align*}
+    \int _{-1}^5\left|x-3\right|\:
+\end{align*}
+
+%%%% Solution of Problem 1%%%%
+\textbf{Solution}
+\[ x-3 =
+  \begin{cases}
+    x-3;\ x-3\geq{0};\ x\geq{3}\\
+    -(x+3);\ x-3\leq{0};\ x\leq{3}
+  \end{cases}
+\]\\
+\begin{align*}
+    \int _{-1}^5\left|x-3\right|\
+    &=\int _{-1}^3 (-x+3)\ dx\ +\int_{3}^5 (x-3)\ dx\\
+    &=\int _{-1}^3 -x\ dx\ +\ \int _{-1}^3 3\ dx\ +\ \int _{3}^5 x\ dx\ -\ \int _{3}^5 3\ dx\\
+    &=\left[\frac{-x^2}{2} \right]_{-1}^3 \ +\ 3x\ +\ \left[\frac{x^2}{2} \right]^5_3\ -\ 3x\\
+    &=\left(\frac{-9}{2}+9+\frac{7}{2}\right)\ +\ \left(\frac{25}{2}-15+\frac{9}{2}\right)\\
+    &=8+2\\
+    &=10
+    & & \textsc{[Answer]}
+\end{align*}
+\pagebreak
+
+%%%%%MATH 02%%%%%%%%%%%%
+\section{Evaluate the following indefinite integral with a substitution, or otherwise:}
+
+
+\begin{align*}
+    \int\frac{x}{\sqrt{4-x^2}} & &  \tesxtsc{where (4\geq{x^2})}
+\end{align*}
+
+
+%%%% Solution of Problem 2%%%%
+\textbf{Solution}
+\begin{align*}
+    Let,\\ u&=4-x^2\\
+    \frac{du}{dx}&=-2x\\
+    du&=-2x\ dx\\
+    -2x\dx&=du\\
+    x\dx&=\frac{-1}{2}\ du\\
+    Now, \\ \int\frac{x}{\sqrt{4-x^2}}\ dx\
+    &=\int-\frac{1}{2\sqrt{u}}\ du\\
+    &=-\frac{1}{2}\int\frac{1}{\sqrt{u}}+c\\
+    &=-\sqrt{u}+c\\
+    &=-\sqrt{4-x^2}+c
+     & & \textsc{[Answer]}
+\end{align*}
+\pagebreak
+
+
+%%%%%MATH 03 (a)%%%%%%%%%%%%
+\section{(a) If $I_n = \int{x^{n-1}} {e^x}\ dx$,\ by\ using\ integration\ by\ parts,\ prove\ that}
+
+
+\begin{align*}
+    I_n = \int{x^{n-1}}{e^x}-(n-1)I_{n-1}
+\end{align*}
+
+
+%%%% Solution of Problem 3(a)%%%%
+\textbf{Solution}
+\begin{align*}
+    Here,\\  f(x)&=x^{n-1}         & g(x)&=e^{x}\\
+    f{'}(x)&=\frac{d}{dx}(x^{n-1})     & G(x)&=\int{e^x}\ dx\\
+    &=(n-1)x^{n-2}               &        &=e^x\\\\
+    Now,\\\int {x^{n-1}}{e^x}\ dx\
+    &=x^{n-1}e^x-\int{(n-1)x^{n-2}}e^x\ dx\\
+    &=x^{n-1}e^x-\ (n-1)\int {x^{n-2}}{e^x}\ dx\\
+    &=x^{n-1}e^x-\ (n-1)I_{n-1}\\\\
+    \therefore  I_n = \int{x^{n-1}}{e^x}-(n-1)I_{n-1} 
+    & & \textsc{[Proved]}
+\end{align*}
+\pagebreak
+
+
+%%%%%MATH 03 (b)%%%%%%%%%%%%
+\textbf{3 (b) Evaluate $I_1 = \int{e^x}\ dx$ and use the reduction formula in part (a) to calculate $I_3$ }
+%%\section{(a) If $I_n = \int{e^x}\ dx$ and use the reduction formula in part (a) to calculate $I_3$ }
+
+
+%%%% Solution of Problem 3(b)%%%%
+\textbf{Solution}
+\begin{align*}
+    Given,\\ I_n&=\int {x^{n-1}}{e^x}\ dx\\
+    I_1&=\int {x^{1-1}}{e^x}\ dx\\
+    I_1&=\int {x^0}{e^x}\ dx\\
+    I_1&=\int{e^x}\ dx\\
+    \therefore I_1=\int e^x\ dx
+     & & \textsc{[Answer]}\\\\
+     Given\\ I_n&=\int {x^{n-1}}{e^x}\ dx\\
+     I_3&=\int {x^{3-1}}{e^x}\ dx\\
+    I_3&=\int {x^2}{e^x}\ dx\\
+    \therefore I_3=\int{x^2} e^x\ dx\\\
+    Now\ using\ Reduction\ Formula,\\
+    f(x)&=x^2      &   g(x)=e^{x}\\
+    f{'}(x)&=\frac{d}{dx}(x^2)  & G(x)=\int{e^x}\ dx\\
+    &=2x                    &   =e^x\\
+    So,\\ 
+    I_3=\int {x^2}{e^x}\ dx\
+    &=x^2e^x-\int{2x}{e^x}\ dx\\
+    &=x^2e^x-2xe^x-2e^x   & \left[\because \int {u}{v}\ dx=u\int {v}dx-\int {\frac{du}{dx}}\int {v}dx\ dx\right]\\\\
+    \therefore I_3=x^2e^x-2xe^x-2e^x
+    & & \textsc{[Answer]}
+\end{align*}
+\pagebreak
+
+%%%%%MATH 04%%%%%%%%%%%%
+\section{Evaluate the following integral by decomposing it into partial fractions, or otherwise:}
+
+
+\begin{align*}
+    \int{\frac{2x+7}{x^2-16x+55}}
+\end{align*}
+
+
+%%%%Solution of Problem 04%%%%
+\textbf{Solution}
+\begin{align*}
+    \int {\frac{2x+7}{x^2-16x+55}} & & &= x^2-16x+55\\
+    =\int {\frac{2x+7}{(x-11)(x-5)}} & & &=x^2-11x-5x+55\\
+                             & &  &=x(x-11)-5(x-11)\\
+                             & &  &=(x-11)(x-5)\\
+    Let,\\
+    \int {\frac{2x+7}{(x-11)(x-5)}}&=\frac{A}{(x-11)}+\frac{B}{(x-5)}\\\\
+    2x+7 &=A(x-5)+B(x-11)\\\\
+    Now,\\
+    x&=5;\ \ \ 17=-6B\ \ \ \therefore B=-\frac{17}{6}\\
+    x&=1;\ \ \ 29=6A\ \ \ \therefore A=\frac{29}{6}\\
+    So,\\
+     \int {\frac{2x+7}{x^2-16x+55}} &=\frac{29}{6}\int {\frac{1}{(x-11)}} + -\frac{17}{6} \int{\frac{1}{(x-5)}}\\
+    &=\frac{29}{6}ln(x-11)-\frac{17}{6}ln(x-5)+c
+    & & \textsc{[Answer]}
+\end{align*}
+\pagebreak
+
+
+%%%%%MATH 05%%%%%%%%%%%%
+\section{Evaluate the following improper integral with the help of Gamma functions, or otherwise:}
+
+
+\begin{align*}
+    \int_{0}^{\infty}{(3t)^7}{e^{(-3t)}}\ dt
+\end{align*}
+
+
+%%%%Solution of Problem 05%%%%
+\textbf{Solution}
+\begin{align*}
+    Let,\\ 3t&=u\\
+    \Rightarrow t&=\frac{u}{3}\\
+    \Rightarrow \frac{d}{dt}(3t)&=\frac{d}{dt}(u)\\
+    \Rightarrow 3&=\frac{du}{dt}\\
+    \therefore dt&=\frac{du}{3}\\\\
+    Now,\\ \int_{0}^{\infty}{(3t)^7}{e^{(-3t)}}\ dt\
+    &=\int_{0}^{\infty}{u^7}{e^{-u}}\ dt\\
+    &=\int_{0}^{\infty}{u^7}{e^{-u}}\frac{du}{3}\\
+    &=\frac{1}{3}\int_{0}^{\infty}{u^{8-1}}{e^{-u}}du\\
+    &=\frac{1}{3}\ \Gamma(8) & \left[\because \Gamma(n)=\int_{0}^{\infty}{x^{n-1}}e^{-x}\ dx\right]\\
+    &=\frac{1}{3}\ (7!)\\
+    &=1680
+    & & \textsc{[Answer]}
+\end{align*}
+\end{document}
