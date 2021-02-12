@@ -1,0 +1,205 @@
+\documentclass[12pt]{article}
+\usepackage{amsfonts}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage{comment}
+
+%\usepackage{pgfplots}
+%\pgfplotsset{width=10cm, compat=1.9}
+%\documentclass[border=2mm,tikz]{standalone}
+%\usetikzlibrary{datavisualization}
+
+
+\usepackage{fancyhdr}
+\usepackage{comment}
+\usepackage[a4paper, top=2.2cm, bottom=2.5cm, left=2.2cm, right=2.2cm]%
+{geometry}
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{changepage}
+\usepackage{amssymb}
+\usepackage{graphicx}%
+\setcounter{MaxMatrixCols}{30}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+
+\title{MAT120: Integral Calculus and
+Differential Equations \\
+BRAC University \\\\
+\textbf{Assignment 2}}
+
+\author{Name - Ishraq Ahmed Esha \\ ID - 19301261 \\ Section - 06 \\ Semester- Fall 2020 \\ \textbf{Set- 12}}
+\date{\today}
+\maketitle
+\pagebreak
+
+
+%%%%%%%%%%%Starting Point%%%%%%%%%%%%%%%
+
+%%%%%MATH 01%%%%%%%%%%%%
+\section{Evaluate the following indefinite integral by using a trigonometric substitution or otherwise}
+
+
+\begin{align*}
+    \int\frac{8}{4+9x^2}\ dx
+\end{align*}
+
+%%%% Solution of Problem 1%%%%
+\begin{align*}
+    Let,\\ u&= \frac{3x}{2} & \therefore\ x=\frac{2u}{3}\\
+    \Rightarrow\frac{du}{dx}&= \frac{3}{2}\\
+    \therefore dx&= \frac{2}{3}du\\\\
+    Now,\\\\ \int\frac{8}{4+9x^2}\ &= \int\frac{8}{4+9x^2}\ \frac{2}{3}du\\
+    &=\int\frac{16}{3(4+9x^2)}du\\
+    &=\int\frac{16}{3(4+9\ \frac{4u^2}{9})}du\\
+    &=\int\frac{16}{3(4+4u^2)}du\\
+    &=\int\frac{16}{12(1+u^2)}du\\
+    &=\frac{16}{12} \int\frac{1}{1+u^2}du\\
+    &=\frac{4}{3}\ tan^{-1}(u)+c &  \left[\because\ \int\frac{1}{1+x^2}= tan^{-1}(x) + c\right]\\
+    &=\frac{4}{3}\ tan^{-1}\left(\frac{3x}{2}\right)+c & \left[\because u=\frac{3x}{2}\right]\\
+    & & \textsc{[Answer]}
+\end{align*}
+\pagebreak
+
+%%%%%MATH 02%%%%%%%%%%%%
+\section{Evaluate the following indefinite integral by using a trigonometric substitution or otherwise}
+
+
+\begin{align*}
+    \int\frac{1}{\sqrt{4-9x^2}}dx
+\end{align*}
+
+
+%%%% Solution of Problem 2%%%%
+\textbf{Solution}
+\begin{align*}
+    Let,\\ x&= \frac{3u}{2} & \therefore\ u=\frac{3w}{2}\\
+    \therefore dx&=\frac{2}{3}du\\\\
+    Now,\\\\ \int\frac{1}{\sqrt{2-9x^2}}dx\ &=\int\frac{1}{\sqrt{4-9\left(\frac{2}{3}u\right)^2}}\ \frac{2}{3}du\\
+    &=\frac{2}{3} \int\frac{1}{\sqrt{4-9\ \frac{4}{9}u^2}}du\\
+    &=\frac{2}{3} \int\frac{1}{\sqrt{4-4u^2}}du\\
+    &=\frac{2}{3} \int\frac{1}{2\sqrt{1-u^2}}du\\
+    &=\frac{2}{6} \int\frac{1}{\sqrt{1-u^2}}du\\
+    &= \frac{1}{3}\ sin^{-1}(u)+c & \left[\because\ \int\frac{1}{\sqrt{1-x^2}}dx\ = sin^{-1}(x)+c\right]\\
+    &=\frac{1}{3}\ sin^{-1}\left(\frac{3x}{2}\right)+c\\
+     & & \textsc{[Answer]}
+\end{align*}
+\pagebreak
+
+
+%%%%%MATH 03 %%%%%%%%%%%%
+\section{Integrate the following with the help of Gamma functions or otherwise}
+
+
+\begin{align*}
+    \int_{0}^{\infty}{x^5}{e^{-\frac{x^2}{5}}}dx
+\end{align*}
+
+
+%%%% Solution of Problem 3 %%%%
+\textbf{Solution}
+\begin{align*}
+    Let,\\ u&=x^2 & \therefore u^2=x^4\\
+    \Rightarrow\frac{du}{dx}&=2x & w=\frac{u}{5} & \therefore u^2=25w^2\\
+    \therefore dx&=\frac{du}{2x} & \Rightarrow\frac{dw}{du}=\frac{1}{5}\\
+    & & \therefore du=5dw\\
+    Now,\\\\ \int_{0}^{\infty}{x^5}{e^{-\frac{x^2}{5}}}dx\ &=\int_{0}^{\infty}{x^5}{e^{-\frac{u}{5}}}\ \frac{du}{2x}\\
+    &=\frac{1}{2}\int_{0}^{\infty}{x^4}{e^{-\frac{u}{5}}}du\\
+    &=\frac{1}{2}\int_{0}^{\infty}{u^2}{e^{-\frac{u}{5}}}du\\
+    &=\frac{1}{2}\int_{0}^{\infty}{25w^2}{e^{-w}}5dw\\
+    &=\frac{25}{2}5\int_{0}^{\infty}{w^2}{e^{-w}}dw & \left[\because \int_{0}^{\infty}{x^{n-1}}{e^{-x}}dx\right]\\
+    &=\frac{125}{2}\ \Gamma(3)\\
+    &=\frac{125}{2}\ 2!\\
+    &=125\\
+    & & \textsc{[Answer]}
+\end{align*}
+\pagebreak
+
+
+%%%%%MATH 04%%%%%%%%%%%%
+\section{Evaluate the following with the help of trigonometric form of Beta functions or otherwise}
+
+
+\begin{align*}
+    \int_{0}^{\frac{3\pi}{2}}{sin^6\left(\frac{x}{3}\right)}{cos^4\left(\frac{x}{3}\right)}
+\end{align*}
+
+
+%%%%Solution of Problem 04%%%%
+\textbf{Solution}
+\begin{align*}
+    we\ know\ the\ trigonometric\ beta\ function,\\
+    \beta(x,y)=\int_{0}^{\frac{\pi}{2}}{2sin^{2x-1}(t)}{cos^{2y-1}(t)dt}\\\\
+    Let,\\ z&=3x & \therefore x=\frac{z}{3}\\
+    \Rightarrow\frac{dz}{dx}&=3\\
+    \therefore dx&=3dz\\
+    z \longrightarrow 0, \ x=0\\
+    z \longrightarrow \frac{3\pi}{2}, \ x=\frac{\pi}{2}\\\\
+    Now,\\\\ \int_{0}^{\frac{3\pi}{2}}{sin^6\left(\frac{x}{3}\right)}{cos^4\left(\frac{x}{3}\right)}\ &= \int_{0}^{\frac{\pi}{2}}sin^6\left(\frac{z}{3}\ \frac{1}{3}\right) cos^4\left(\frac{z}{3}\ \frac{1}{3}\right)3dz\\
+    &=\frac{1}{3}\ \frac{1}{3} \int_{0}^{\frac{\pi}{2}}sin^6\left(\frac{z}{3}\right)cos^4\left(\frac{z}{3}\right)3dz\\
+    &=\frac{1}{9} \int_{0}^{\frac{\pi}{2}}sin^6(z)cos^4(z)dz\\
+    &= \frac{1}{9}\ \frac{\Gamma\left(\frac{6+1}{2}\right)\ \Gamma\left(\frac{4+1}{2}\right)}{2\ \Gamma\left(\frac{6+4+2}{2}\right)}\\
+    &= \frac{1}{9}\ \frac{\Gamma\left(\frac{7}{2}\right)\ \Gamma\left(\frac{5}{2}\right)}{2\ \Gamma(6)}\\
+    &= \frac{1}{18}\ \frac{\Gamma\left(\frac{7}{2}\right)\ \Gamma\left(\frac{5}{2}\right)}{\Gamma(6)}\\
+    & & \textsc{[Answer]}
+\end{align*}
+\pagebreak
+
+
+%%%%%MATH 05%%%%%%%%%%%%
+\section{Evaluate the following with the help of Beta functions or otherwise}
+
+
+\begin{align*}
+    \int_{0}^{3^{\frac{2}{3}}}{x^{\frac{7}{2}}}{\left(3-x^{\frac{3}{2}}\right)^4}dx\\
+\end{align*}
+
+
+%%%%Solution of Problem 05%%%%
+\textbf{Solution}
+\begin{align*}
+    Let,\\ x&=3y & u&=y^{\frac{3}{2}}\ \therefore u^2=y^3\\
+    \therefore dx&=3dy & \Rightarrow\frac{du}{dy}&=\frac{3}{2}y^{\frac{1}{2}}\\
+    x \longrightarrow 0, \ y=0 & & \therefore dy&=\frac{2du}{3y^{\frac{1}{2}}}\\
+    x \longrightarrow 3^{\frac{2}{3}}, \ y=1\\\\
+    Now,\\ \int_{0}^{3^{\frac{2}{3}}}{x^{\frac{7}{2}}}{\left(3-x^{\frac{3}{2}}\right)^4}dx\ &= \int_{0}^{1}{(3y)^{\frac{7}{2}}}\left({3-(3y)^{\frac{3}{2}}}\right)^43dy\\
+    &=3^\frac{7}{2}\ 3 \int_{0}^{1}{y^{\frac{7}{2}}}\ {3^4(1-y^{\frac{3}{2}})^4}dy\\
+    &=3^\frac{7}{2}\ 3\ 3^4 \int_{0}^{1}{y^{\frac{7}{2}}}\ {(1-y^{\frac{3}{2}})^4}dy\\
+    &=3^\frac{17}{2} \int_{0}^{1}{y^{\frac{7}{2}}}\ {(1-u)^4}\frac{2du}{3y^{\frac{1}{2}}}\\
+    &=3^\frac{17}{2}\ \frac{2}{3} \int_{0}^{1}{u^2}\ {(1-u)^4}du & \left[\because \int_{0}^{1} t^{x-1}(1-t)^{y-1}dt\right] \\
+    So,\\ x-1&=2 & \therefore x=3\\
+    y-1&=3 & \therefore y=5\\\\
+    \therefore 3^\frac{17}{2}\ \frac{2}{3} \int_{0}^{1}{u^2}\ {(1-u)^4}du\ &=3^\frac{17}{2}\ \frac{2}{3}\ \beta(3,5)\\
+    &=3^\frac{17}{2}\ \frac{2}{3}\ \frac{\Gamma(3)\ \Gamma(5)}{\Gamma(3+5)} &  \left[\because \beta(x,y)= \frac{\Gamma(x)\ \Gamma(y)}{\Gamma(x+y)}\right]\\
+    &=3^\frac{17}{2}\ \frac{2}{3}\ \frac{2!\ 4!}{7!}\\
+    & & \textsc{[Answer]}
+\end{align*}
+\end{document}
