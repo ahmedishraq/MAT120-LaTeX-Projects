@@ -1,0 +1,200 @@
+\documentclass[12pt]{article}
+\usepackage{amsfonts}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage{comment}
+
+%\usepackage{pgfplots}
+%\pgfplotsset{width=10cm, compat=1.9}
+%\documentclass[border=2mm,tikz]{standalone}
+%\usetikzlibrary{datavisualization}
+
+
+\usepackage{fancyhdr}
+\usepackage{comment}
+\usepackage[a4paper, top=2.2cm, bottom=2.5cm, left=2.2cm, right=2.2cm]%
+{geometry}
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{changepage}
+\usepackage{amssymb}
+\usepackage{graphicx}%
+\setcounter{MaxMatrixCols}{30}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+
+\title{MAT120: Integral Calculus and
+Differential Equations \\
+BRAC University \\\\
+\textbf{Assignment 4}}
+
+\author{Name - Ishraq Ahmed Esha \\ ID - 19301261 \\ Section - 06 \\ Semester- Fall 2020 \\ \textbf{Set- 4}}
+\date{\today}
+\maketitle
+\pagebreak
+
+
+%%%%%%%%%%%Starting Point%%%%%%%%%%%%%%%
+
+%%%%%MATH 01%%%%%%%%%%%%
+\section{Evaluate the double integral $\int\int_R(3x-2y)\ dA;$\ R is the region enclosed by the circle\ $x^2+y^2=1$}
+
+
+%%\begin{align*}%%
+    %%x=ln(sec y)\ & & y=0\ and\ y=\frac{\pi}{4}%%%
+%%\end{align*}%%
+
+%%%% Solution of Problem 1%%%%
+\textbf{Solution}
+\begin{align*}
+    -1\leq x\leq1\quad ;\quad -\sqrt{1-x^2}\leq y\leq \sqrt{1-x^2}\\\\
+    Now,\\\\
+    \int\int_R(3x-2)\ dA &=\int_{-1}^{1}\int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}}(3x-2y)\ dy\ dx\\
+    &=\int_{-1}^{1}\left[3xy-y^2\right]_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}}\ dx & Let, u=1-x^2 \\
+    &=\int_{-1}^{1}6x\sqrt{1-x^2}\ dx & \Rightarrow \frac{du}{dx}=-2x\\
+    &=-3\int_{-1}^{1}2x\ dx \sqrt{u} & \therefore du=-2xdx\\
+    &=-3\int_{-1}^{1}u^{\frac{1}{2}}\ du\\
+    &=-3\ \frac{2}{3}\left[u^{\frac{3}{2}}\right]_{-1}^{1}\\
+    &=2\left[(1-x^2)^{\frac{3}{2}}\right]_{-1}^{1} & \left[\because u=1-x^2\right]\\
+    &=2\ (0-0)\\
+    &=0\\
+    & & \textsc{[Answer]}
+\end{align*}
+\pagebreak
+
+%%%%%MATH 02%%%%%%%%%%%%
+\section{Evaluate the double integral $\int\int_{R}\ y\ dA;$\ R is the region in the first quadrant enclosed between the circle $x^2+y^2=25$ and the line $x+y=5$}
+
+
+%%\begin{align*}%%
+    %%\int\frac{1}{\sqrt{4-9x^2}}dx%%
+%%\end{align*}%%
+
+
+%%%% Solution of Problem 2%%%%
+\textbf{Solution}
+\begin{align*}
+    0\leq x\leq5\quad ;\quad 5-x\leq y\leq\sqrt{25-x^2}\\\\
+    Now,\\\\
+    \int\int_{R}y\ dA &=\int_{0}^{5}\int_{5-x}^{\sqrt{25-x^2}}y\ dy\ dx\\
+    &=\int_{0}^{5}\left[\frac{y^2}{2}\right]_{5-x}^{\sqrt{25-x^2}}\ dx\\
+    &=\int_{5}^{0}\left(\frac{25-x^2}{2}-\frac{(5-x)^2}{2}\right)\ dx\\
+    &=\int_{0}^{5}\left(\frac{10x-2x^2}{2}\right)\ dx\\
+    &=\int_{0}^{5}(5x-x^2)\ dx\\
+    &=\int_{0}^{5}5x\ dx\ -\ \int_{0}^{5}x^2\ dx\\
+    &=5\left[\frac{x^2}{2}\right]_{0}^{5}\ -\ \left[\frac{x^3}{3}\right]_{0}^{5}\\
+    &=\frac{125}{2}\ -\ \frac{125}{3}\\
+    &=\frac{125}{6}\\
+     & & \textsc{[Answer]}
+\end{align*}
+\pagebreak
+
+
+%%%%%MATH 03 %%%%%%%%%%%%
+\section{Evaluate the double integral $\int\int_{R}x(1+y^2)^{-\frac{1}{2}}\ dA;$\ R is the region in the first quadrant enclosed between $y=x^2, y=4,$ and $x=0$}
+
+
+%%%begin{align*}%%
+%%    \int_{0}^{\infty}{x^5}{e^{-\frac{x^2}{5}}}dx%%
+%%\end{align*}%%
+
+
+%%%% Solution of Problem 3 %%%%
+\textbf{Solution}
+\begin{align*}
+     0\leq x\leq\sqrt{y}\quad ;\quad 0\leq y\leq4\\\\
+     Now,\\\\
+     \int\int_{R}x(1+y^2)^{-\frac{1}{2}}\ dA &=\int_{0}^{4}\int_{0}^{\sqrt{y}}x(1+y^2)^{-\frac{1}{2}}\ dx\ dy\\
+     &=\int_{0}^{4}(1+y^2)^{-\frac{1}{2}}\ dy\ \int_{0}^{\sqrt{y}}x\ dx & Let, u=1+y^2\\
+     &=\int_{0}^{4}(1+y^2)^{-\frac{1}{2}}\ \frac{1}{2}\left[x^2\right]_{0}^{\sqrt{y}} & \Rightarrow \frac{du}{dy}=2y\\
+     &=\int_{0}^{4}\frac{1}{2}\ (1+y)^{-\frac{1}{2}}\ y\ dy & \therefore ydy=\frac{du}{2}\\
+     &=\frac{1}{2}\int_{0}^{4}u^{-\frac{1}{2}}\ \frac{du}{2}\\
+     &=\frac{1}{4}\int_{0}^{4}u^{-\frac{1}{2}}\ du\\
+     &=\frac{1}{4}\ 2\ \left[u^{\frac{1}{2}}\right]_{0}^{4}\\
+     &=\frac{1}{2}\left[\left(1+y^2\right)^{\frac{1}{2}}\right]_{0}^{4} & \left[\because u=(1+y^2)\right]\\
+     &=\frac{1}{2}\ \sqrt{17}-1\\
+     &=\frac{\sqrt{17}-1}{2}\\
+    & & \textsc{[Answer]}
+\end{align*}
+\pagebreak
+
+
+%%%%%MATH 04%%%%%%%%%%%%
+\section{Evaluate the double integral $\int\int_{R}x\ cos\ y\ dA;$\ R is the triangular region bounded by the lines $y=x, x=0$\ and $x=\pi$}
+
+
+%%5\begin{align*}%%
+%%    \int_{0}^{\frac{3\pi}{2}}{sin^6\left(\frac{x}{3}\right)}{cos^4\left(\frac{x}{3}\right)}%%
+%%\end{align*}%%
+
+
+%%%%Solution of Problem 04%%%%
+\textbf{Solution}
+\begin{align*}
+    0\leq x\leq\pi\quad ;\quad 0\leq y\leq x\\\\
+    Now,\\\\
+    \int\int_{R}x\ cos\ y\ dA\ &=\int_{0}^{\pi}\int_{0}^{x}x\ cos\ y\ dy\ dx\\
+    &=\int_{\pi}^{0}x\ \left[sin\ y\right]_{0}^{x}\ dx & Let, u=x\ \therefore \frac{du}{dx}=1\\
+    &=\int_{0}^{\pi}x\ sin\ x\ dx & \frac{dv}{dx}=sin\ x\ \therefore v = -cos\ x\\
+    &=\left[sin\ x - x\ cos\ x\ \right]_{0}^{\pi} & \left[\because\int u\ \frac{dv}{dx}=uv-\int v\ \frac{du}{dx}\right]\\
+    &=\pi\\
+    & & \textsc{[Answer]}
+\end{align*}
+\pagebreak
+
+
+%%%%%MATH 05%%%%%%%%%%%%
+\section{Evaluate the double integral $\int\int_{R}\ x\ dA;$\ R is the triangular region bounded by $y=sin^{-1}x, y=0$\ and $x=\frac{1}{\sqrt{2}}$}
+
+
+%%\begin{align*}%%
+    %%\int_{0}^{3^{\frac{2}{3}}}{x^{\frac{7}{2}}}{\left(3-x^{\frac{3}{2}}\right)^4}dx\\%%
+%%\end{align*}%%
+
+
+%%%%Solution of Problem 05%%%%
+\textbf{Solution}
+\begin{align*}
+    sin\ y\leq x\leq\ \frac{1}{\sqrt{2}} \quad ;\quad 0\leq y\leq \frac{\pi}{4}\\
+    Now,\\
+    \int\int_{R}\ x\ dA\ 
+    &=\int_{0}^{\frac{\pi}{4}}\int_{sin\ y}^{\frac{1}{\sqrt{2}}}x\ dx\ dy\\
+    &=\int_{0}^{\frac{\pi}{4}}\ \left[\frac{x^2}{2}\right]_{sin\ y}^{\frac{1}{\sqrt{2}}}\ dy\\
+    &=\int_{0}^{\frac{\pi}{4}}\left(\frac{1}{4}\ -\ \frac{sin^2\ y}{2}\right)\ dy\\
+    &=\int_{0}^{\frac{\pi}{4}}\left(\frac{2-4\ sin^2\ y}{8}\right)\ dy & Let, u=2y\ \Rightarrow\frac{du}{dy}=2\\
+    &=\int_{0}^{\frac{\pi}{4}}\frac{1}{4}\ cos\ 2y\ dy\ \left[\because1-2sin^2\ A=cos\ 2A\right] & \therefore dy=\frac{du}{2}\\
+    &=\frac{1}{4}\ \frac{1}{2}\int_{0}^{\frac{\pi}{4}}cos\ u\ du\\
+    &=\frac{1}{8}\ \left[sin\ u\right]_{0}^{\frac{\pi}{4}}\\
+    &=\frac{1}{8}\ \left[sin\ 2y\right]_{0}^{\frac{\pi}{4}} \quad \left[\because u=2y\right]\\
+    &=\frac{1}{8}\\
+    & & \textsc{[Answer]}
+\end{align*}
+\end{document}
